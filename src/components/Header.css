@@ -1,3 +1,53 @@
+/* .header {
+    height: 60px;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    background-color: #131921;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+} */
+
+/* .header__logo {
+    width: 150px;
+    height: 80%;
+    object-fit: contain;
+    margin: 0 20px;
+    margin-top: 5px;
+} */
+
+/* .header__search {} */
+
+/* .header_searchInput { */
+/* width: 680px; */
+/* width: 200%; */
+/* } */
+
+/* .header_searchIcon {
+    background-color: orange;
+}
+
+.header__nav {
+    display: flex;
+    color: white;
+
+}
+
+
+.header__option {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 10px;
+
+}
+
+.header__optionLineOne {
+    width: 50%;
+}  */
+
+
+
 .header {
     height: 60px;
     display: flex;
@@ -9,8 +59,63 @@
 }
 
 .header__logo {
-    width: 150px;
+    height: 80%;
     object-fit: contain;
-    margin: 0 20px;
-    margin-top: 5px;
+    margin: 0 10px;
+    /* Adjusted margin for smaller screens */
+}
+
+.header__search {
+    flex-grow: 1;
+    /* Allow the search to grow and take available space */
+}
+
+.header_searchInput {
+    width: 100%;
+    /* Take full width of the container */
+    max-width: 400px;
+    /* Limit the width to avoid stretching on larger screens */
+}
+
+.header_searchIcon {
+    background-color: orange;
+}
+
+.header__nav {
+    display: flex;
+    color: white;
+}
+
+.header__option {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.header__optionLineOne {
+    width: 100%;
+    /* Take full width */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        /* Stack items vertically on smaller screens */
+    }
+
+    .header__logo {
+        margin: 10px 0;
+        /* Adjust margin for smaller screens */
+    }
+
+    .header__search {
+        width: 100%;
+        /* Take full width in the stacked layout */
+    }
+
+    .header__option {
+        margin: 5px;
+        /* Adjust margin for smaller screens */
+    }
 }
