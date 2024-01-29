@@ -9,8 +9,8 @@ function Header() {
         alt="amazonLogo"
       />
       <div className="header__search">
-        <input className="header_searchInput" type="text" />
-        <button className="header_searchIcon">Serach</button>
+        <input className="header__searchInput" type="text" />
+        <button className="header__searchIcon">Serach</button>
       </div>
       <div className="header__nav">
         <div className="header__option">
@@ -25,9 +25,11 @@ function Header() {
           <span className="header__optionLineOne">Your</span>
           <span className="header__optionLineTwo">Prime</span>
         </div>
-        <div className="header__option">
-          <span className="header__optionLineOne">Basket</span>
-          <span className="header__optionLineTwo">Item Count</span>
+        <div className="header__optionBasket">
+          <span className="header__optionLineOne">
+            <button className="header__basketLogo">Basket</button>
+          </span>
+          <span className="header__optionLineTwo header__basketCount">0</span>
         </div>
       </div>
     </div>
