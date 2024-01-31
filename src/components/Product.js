@@ -1,6 +1,7 @@
 import React from "react";
 import "./Product.css";
 function Product({ title, image, price, rating }) {
+  let array = Array(rating).fill(1);
   return (
     <div className="product">
       <div className="product__info">
@@ -10,9 +11,9 @@ function Product({ title, image, price, rating }) {
           <small>{price}</small>
         </p>
         <div className="product__rating">
-          <p>⭐️</p>
-          <p>⭐️</p>
-          <p>⭐️</p>
+          {array.map(() => {
+            return <p>⭐️</p>;
+          })}
         </div>
         <img className="product__image" src={image} />
       </div>

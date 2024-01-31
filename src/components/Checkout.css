@@ -1,0 +1,30 @@
+.checkout {
+    display: flex;
+}
+
+.checkout__left {
+    width: 70%;
+}
+
+.checkout__right {
+    background-color: rgb(230, 227, 227);
+    width: 30%;
+}
+
+.checkout__right>p {
+    margin-left: 20px;
+}
+
+.checkout__right>label {
+    margin-left: 20px;
+}
+
+
+.checkout__right>button {
+    background-color: orange;
+    align-items: flex-end;
+    width: 80%;
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right: 20px;
+}
