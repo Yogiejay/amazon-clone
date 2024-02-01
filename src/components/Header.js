@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import Context from "../usecontext/Context";
 import "./Header.css";
 function Header() {
+  const { totalItems } = useContext(Context);
   return (
     <div className="header">
-      <img
-        className="header__logo"
-        src="https://assets.aboutamazon.com/88/05/0feec6ff47bab443d2c82944bb09/amazon-logo.png"
-        alt="amazonLogo"
-      />
+      <Link to="/">
+        <img
+          className="header__logo"
+          src="https://assets.aboutamazon.com/88/05/0feec6ff47bab443d2c82944bb09/amazon-logo.png"
+          alt="amazonLogo"
+        />
+      </Link>
       <div className="header__search">
         <input className="header__searchInput" type="text" />
         <button className="header__searchIcon">Serach</button>
@@ -25,12 +30,16 @@ function Header() {
           <span className="header__optionLineOne">Your</span>
           <span className="header__optionLineTwo">Prime</span>
         </div>
-        <div className="header__optionBasket">
-          <span className="header__optionLineOne">
-            <button className="header__basketLogo">Basket</button>
-          </span>
-          <span className="header__optionLineTwo header__basketCount">0</span>
-        </div>
+        <Link to="/checkout">
+          <div className="header__optionBasket">
+            <span className="header__optionLineOne">
+              <button className="header__basketLogo">Basket</button>
+            </span>
+            <span className="header__optionLineTwo header__basketCount">
+              {totalItems}
+            </span>
+          </div>
+        </Link>
       </div>
     </div>
   );
