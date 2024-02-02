@@ -3,14 +3,22 @@ import UserContext from "../usecontext/Context";
 import "./Product.css";
 function Product({ title, image, price, rating }) {
   let array = Array(rating).fill(1);
-  const { totalAmount, settotalAmount, totalItems, settotalItems } =
-    useContext(UserContext);
+  const {
+    totalAmount,
+    settotalAmount,
+    totalItems,
+    settotalItems,
+    setshoppingBasketArray,
+  } = useContext(UserContext);
   const handleClick = () => {
     settotalAmount((prev) => {
       return prev + price;
     });
     settotalItems((prev) => {
       return prev + 1;
+    });
+    setshoppingBasketArray((prevVal) => {
+      return [...prevVal, [title, image, price, rating]];
     });
   };
   return (
