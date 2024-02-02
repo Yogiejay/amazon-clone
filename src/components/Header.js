@@ -20,7 +20,7 @@ function Header() {
       <div className="header__nav">
         <div className="header__option">
           <span className="header__optionLineOne">Hello</span>
-          <Link to="/login">
+          <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
             <span className="header__optionLineTwo">Sign in</span>
           </Link>
         </div>
