@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Checkout from "./components/Checkout";
 import ContextProvider from "./usecontext/ContextProvider";
 import Login from "./components/Login";
+import CreateAccount from "./components/CreateAccount";
 
 function App() {
   return (
@@ -34,6 +35,14 @@ function App() {
               element={
                 <>
                   <Login />
+                </>
+              }
+            />
+            <Route
+              path="/createAccount"
+              element={
+                <>
+                  <CreateAccount />
                 </>
               }
             />

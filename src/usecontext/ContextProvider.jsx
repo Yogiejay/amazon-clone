@@ -7,8 +7,9 @@ function ContextProvider({children}) {
     const [loginArray , setloginArray] = useState([["yogesh","yadav"],["geetesh","yadav"]]);
     const [username , setusername] = useState();
     const [password , setpassword] = useState();
+    const [registerArray , setregisterArray] = useState([]);
   return (
-    <Context.Provider value={{totalAmount,settotalAmount,totalItems,settotalItems,shoppingBasketArray , setshoppingBasketArray,loginArray,setloginArray,username , setusername, password , setpassword}}>
+    <Context.Provider value={{totalAmount,settotalAmount,totalItems,settotalItems,shoppingBasketArray , setshoppingBasketArray,loginArray,setloginArray,username , setusername, password , setpassword,registerArray,setregisterArray}}>
     {children}
     </Context.Provider>
   )

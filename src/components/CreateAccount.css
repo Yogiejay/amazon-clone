@@ -1,0 +1,40 @@
+.createAccount {
+    /* padding: 20px; */
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.accountForm {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(127, 123, 120);
+    padding: 20px;
+    width: 30%;
+}
+
+.formGroup {
+    margin-bottom: 10px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+.accountForm>button {
+    background-color: orange;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    /* text-align: center;
+    align-items: center; */
+    justify-content: center;
+}
+
+.accountForm>p {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+}
