@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import UserContext from "../usecontext/Context";
 import "./Product.css";
-function Product({ title, image, price, rating, count }) {
+function Product({ id, title, image, price, rating, count }) {
   let array = Array(rating).fill(1);
   const {
     totalAmount,
@@ -9,6 +9,7 @@ function Product({ title, image, price, rating, count }) {
     totalItems,
     settotalItems,
     setshoppingBasketArray,
+    shoppingBasketArray,
   } = useContext(UserContext);
   const handleClick = () => {
     settotalAmount((prev) => {
@@ -17,9 +18,34 @@ function Product({ title, image, price, rating, count }) {
     settotalItems((prev) => {
       return prev + 1;
     });
-    setshoppingBasketArray((prevVal) => {
-      return [...prevVal, [title, image, price, rating, count]];
+    let flag = false;
+    const updatedshoppingBasketArray = shoppingBasketArray.map((e) => {
+      if (e[0] === id) {
+        flag = true;
+        e[5]++;
+      }
+      return e;
     });
+    if (flag) {
+      setshoppingBasketArray(updatedshoppingBasketArray);
+    } else {
+      setshoppingBasketArray([
+        ...shoppingBasketArray,
+        [id, title, image, price, rating, count],
+      ]);
+    }
+    // setshoppingBasketArray((prevVal) => {
+    //   let flag = false;
+    //   const updatedshoppingBasketArray = prevVal.map((e)=>{
+    //     if (e[0] === id){
+    //       flag = true;
+
+    //     }
+    //   })
+
+    //   }
+    //   return [...prevVal, [id,title, image, price, rating, count]];
+    // });
   };
   return (
     <div className="product">
