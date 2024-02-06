@@ -3,16 +3,21 @@ import "./CreateAccount.css";
 import Context from "../usecontext/Context";
 
 function CreateAccount() {
-    const [firstname , setFirestname] = useState();
-    const [lastname , setLastname] = useState();
-    const [username , setUsername] = useState();
-    const [password , setPassword] = useState();
-    const [repassword , setRepassword] = useState();
+    const [firstname , setFirestname] = useState("");
+    const [lastname , setLastname] = useState("");
+    const [username , setUsername] = useState("");
+    const [password , setPassword] = useState("");
+    const [repassword , setRepassword] = useState("");
     const {registerArray , setregisterArray} = useContext(Context);
     const handleSubmit = (e)=>{
-        e.preventDefault()
-        const newUser = {firstname:firstname , lastname:lastname,username:username,password:password}
-        setregisterArray([...registerArray , {firstname:firstname , lastname:lastname,username:username,password:password}])
+        e.preventDefault();
+        // const newUser = {firstname:firstname , lastname:lastname,username:username,password:password}
+        setregisterArray([...registerArray , {"firstname":firstname , "lastname":lastname,"username":username,"password":password}]);
+        setFirestname("");
+        setLastname("");
+        setUsername("");
+        setPassword("");
+        setRepassword("");
     }
   return (
     <div className='createAccount'>

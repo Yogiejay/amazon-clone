@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import UserContext from "../usecontext/Context";
 import "./Product.css";
-function Product({ title, image, price, rating }) {
+function Product({ title, image, price, rating, count }) {
   let array = Array(rating).fill(1);
   const {
     totalAmount,
@@ -18,7 +18,7 @@ function Product({ title, image, price, rating }) {
       return prev + 1;
     });
     setshoppingBasketArray((prevVal) => {
-      return [...prevVal, [title, image, price, rating]];
+      return [...prevVal, [title, image, price, rating, count]];
     });
   };
   return (

@@ -6,6 +6,7 @@ import Checkout from "./components/Checkout";
 import ContextProvider from "./usecontext/ContextProvider";
 import Login from "./components/Login";
 import CreateAccount from "./components/CreateAccount";
+import Forgotpassword from "./components/Forgotpassword";
 
 function App() {
   return (
@@ -43,6 +44,14 @@ function App() {
               element={
                 <>
                   <CreateAccount />
+                </>
+              }
+            />
+            <Route
+              path="/forgotpassword"
+              element={
+                <>
+                  <Forgotpassword />
                 </>
               }
             />

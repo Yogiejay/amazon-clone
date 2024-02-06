@@ -10,3 +10,19 @@
     object-fit: contain;
     margin-bottom: 15px;
 }
+
+.minusButton {
+    width: 5%;
+    height: 50%;
+}
+
+.plusButton {
+    width: 5%;
+    height: 50%;
+}
+
+.basketproductCount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

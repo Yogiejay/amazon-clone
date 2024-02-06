@@ -2,7 +2,9 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Context from "../usecontext/Context";
 import "./Header.css";
+
 function Header() {
+  const { username } = useContext(Context);
   const { totalItems } = useContext(Context);
   return (
     <div className="header">
@@ -21,7 +23,9 @@ function Header() {
         <div className="header__option">
           <span className="header__optionLineOne">Hello</span>
           <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
-            <span className="header__optionLineTwo">Sign in</span>
+            <span className="header__optionLineTwo">
+              {username ? username : "Sign in"}
+            </span>
           </Link>
         </div>
         <div className="header__option">
