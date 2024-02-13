@@ -1,8 +1,17 @@
 .product__info {
     display: flex;
-    flex-direction: column;
-    border-radius: 10px;
+    flex-direction: row;
+    justify-content: center;
 }
+
+.product__left {
+    width: 30%;
+}
+
+.product__right {
+    width: 70%;
+}
+
 
 .product__image {
     max-height: 200px;
