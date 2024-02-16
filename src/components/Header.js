@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Context from "../usecontext/Context";
 import "./Header.css";
@@ -6,6 +6,27 @@ import "./Header.css";
 function Header() {
   const { username } = useContext(Context);
   const { totalItems } = useContext(Context);
+  const [searchItem, setsearchItem] = useState();
+  const items = [
+    "Apple",
+    "Banana",
+    "Orange",
+    "Grapes",
+    "Mango",
+    "Strawberry",
+    "Pineapple",
+    "Watermelon",
+    "Kiwi",
+    "Peach",
+  ];
+
+  const handleSearch = () => {
+    items.map((item) => {
+      if (item === searchItem) {
+        <li>item</li>;
+      }
+    });
+  };
   return (
     <div className="header">
       <Link to="/">
@@ -16,8 +37,17 @@ function Header() {
         />
       </Link>
       <div className="header__search">
-        <input className="header__searchInput" type="text" />
-        <button className="header__searchIcon">Serach</button>
+        <input
+          className="header__searchInput"
+          type="text"
+          value={searchItem}
+          onChange={(e) => {
+            setsearchItem(e.target.value);
+          }}
+        />
+        <button className="header__searchIcon" onClick={handleSearch}>
+          Serach
+        </button>
       </div>
       <div className="header__nav">
         <div className="header__option">
