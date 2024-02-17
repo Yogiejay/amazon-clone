@@ -23,7 +23,9 @@ function Header() {
   const handleSearch = () => {
     items.map((item) => {
       if (item === searchItem) {
-        <li>item</li>;
+        <ul>
+          <li>item</li>;
+        </ul>;
       }
     });
   };
