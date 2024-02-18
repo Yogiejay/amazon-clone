@@ -1,6 +1,7 @@
 import React, { useState , useContext } from 'react';
 import "./CreateAccount.css"; 
 import Context from "../usecontext/Context";
+import { useNavigate } from 'react-router-dom';
 
 function CreateAccount() {
     const [firstname , setFirestname] = useState("");
@@ -9,7 +10,9 @@ function CreateAccount() {
     const [password , setPassword] = useState("");
     const [repassword , setRepassword] = useState("");
     const {registerArray , setregisterArray} = useContext(Context);
+    const navigate = useNavigate();
     const handleSubmit = (e)=>{
+      
         e.preventDefault();
         // const newUser = {firstname:firstname , lastname:lastname,username:username,password:password}
         setregisterArray([...registerArray , {"firstname":firstname , "lastname":lastname,"username":username,"password":password}]);
@@ -18,6 +21,9 @@ function CreateAccount() {
         setUsername("");
         setPassword("");
         setRepassword("");
+        navigate('/login');
+
+
     }
   return (
     <div className='createAccount'>
