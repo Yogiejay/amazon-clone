@@ -2,10 +2,12 @@ import React, { useState , useContext } from 'react';
 import "./CreateAccount.css"; 
 import Context from "../usecontext/Context";
 import { useNavigate } from 'react-router-dom';
+import {auth} from "../firebase";
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 function CreateAccount() {
     const [firstname , setFirestname] = useState("");
-    const [lastname , setLastname] = useState("");
+    // const [lastname , setLastname] = useState("");
     const [username , setUsername] = useState("");
     const [password , setPassword] = useState("");
     const [repassword , setRepassword] = useState("");
@@ -15,9 +17,9 @@ function CreateAccount() {
       
         e.preventDefault();
         // const newUser = {firstname:firstname , lastname:lastname,username:username,password:password}
-        setregisterArray([...registerArray , {"firstname":firstname , "lastname":lastname,"username":username,"password":password}]);
+        setregisterArray([...registerArray , {"firstname":firstname /*, "lastname":lastname*/,"username":username,"password":password}]);
         setFirestname("");
-        setLastname("");
+        // setLastname("");
         setUsername("");
         setPassword("");
         setRepassword("");
@@ -25,39 +27,43 @@ function CreateAccount() {
 
 
     }
+    // const handleSubmit = async (e) =>{
+    //   e.preventDefault();
+    //   // await createUserWithEmailAndPassword(auth , )
+    // }
   return (
     <div className='createAccount'>
       <form className='accountForm'>
         <p>Please Register</p>
         <div className='formGroup'>
           <label>First Name :</label>
-          <input type='text' placeholder='Enter your First Name' value={firstname} onChange={(e)=>{setFirestname(e.target.value)}} />
+          <input type='text' placeholder='Enter your First Name' value={firstname} onChange={(e)=>{setFirestname(e.target.value)}} required/>
         </div>
 
-        <div className='formGroup'>
+        {/* <div className='formGroup'>
           <label>Last Name :</label>
           <input type='text' placeholder='Enter your Last Name' value={lastname} onChange={(e)=>{setLastname(e.target.value)}}/>
-        </div>
+        </div> */}
 
         <div className='formGroup'>
           <label>UserName :</label>
-          <input type='text' placeholder='Enter UserName' value={username} onChange={(e)=>{setUsername(e.target.value)}}/>
+          <input type='text' placeholder='Enter UserName' value={username} onChange={(e)=>{setUsername(e.target.value)}} required/>
         </div>
 
         <div className='formGroup'>
           <label>Password :</label>
-          <input type='password' placeholder='Create a password' value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
+          <input type='password' placeholder='Create a password' value={password} onChange={(e)=>{setPassword(e.target.value)}} required/>
         </div>
 
         <div className='formGroup'>
           <label>Retype Password :</label>
-          <input type='password' placeholder='Re-enter the password' value={repassword} onChange={(e)=>{setRepassword(e.target.value)}}/>
+          <input type='password' placeholder='Re-enter the password' value={repassword} onChange={(e)=>{setRepassword(e.target.value)}} required/>
         </div>
         <button onClick={handleSubmit}>Submit</button>
-        {registerArray.forEach(element => {
+        {/* {registerArray.forEach(element => {
             return (<div>{element.firstname}</div>)
         })
-        }
+        } */}
       </form>
     </div>
   );

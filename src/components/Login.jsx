@@ -1,18 +1,34 @@
 import React, { useContext, useState } from 'react'
 import Context from "../usecontext/Context";
-import { Link } from 'react-router-dom';
+import { Link , useNavigate } from 'react-router-dom';
 import { auth } from "../firebase";
 import "./Login.css";
+import { signInWithEmailAndPassword } from 'firebase/auth';
 function Login() {
   const { username, setusername, /*password, setpassword , loginArray , setloginArray , */registerArray, /*setregisterArray*/ } = useContext(Context);
   const [isLoggedin, setisLoggedin] = useState();
   const [isChecked, setisChecked] = useState(false);
   const [userName, setuserName] = useState("");
   const [passWord, setpassWord] = useState("");
+  const navigate = useNavigate();
   // console.log(registerArray);
   const handleCheck = () => {
     return setisChecked(!isChecked);
   }
+//  Below code is done using firebase modue 
+  // const handleLogin = async (e) =>{
+  //   e.preventDefault();
+  //   await signInWithEmailAndPassword(auth , userName , passWord)
+  //   .then((user)=>{
+  //     navigate("/home");
+  //   })
+  //   .catch((error)=>{
+  //     const ErrorMessage = error.message;
+  //     const ErrorCode = error.code;
+  //     alert (`${ErrorCode} : this is the error ${ErrorMessage}`);
+  //   })
+  // }
+
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -41,9 +57,9 @@ function Login() {
     setuserName("");
     setpassWord("");
   }
-  // const handlecreateAccount = ()=>{
+  const handlecreateAccount = ()=>{
 
-  // }
+  }
 
   return (
     <div className='login'>
